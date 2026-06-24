@@ -55,18 +55,20 @@ $total = array_sum(array_column($data, 'amount'));
 <body>
     <div class="container">
 
-        <!-- ヘッダー -->
-        <header class="page-head">
-            <p class="eyebrow">Travel Expenses</p>
-            <h1>旅費の記録</h1>
-            <p class="sub">旅ごとの支出を記録して、内訳を見渡す。</p>
-            <a href="./index.php" class="btn-primary header-btn">＋ 旅費を登録</a>
-        </header>
+        <div class="head-row">
+            <!-- ヘッダー -->
+            <header class="page-head">
+                <p class="eyebrow">Travel Expenses</p>
+                <h1>旅費の記録</h1>
+                <div class="total-row">
+                    <span class="label">Total</span>
+                    <span class="value"><?= number_format($total) ?><span class="yen">円</span></span>
+                </div>
+            </header>
 
-        <!-- 総額 -->
-        <div class="total-hero">
-            <span class="label">Total</span>
-            <span class="value"><?= number_format($total) ?><span class="yen">円</span></span>
+            <!-- 登録ボタン -->
+            <a href="./index.php" class="btn-primary header-btn">＋ 旅費を登録</a>
+
         </div>
 
         <!-- グラフ -->
@@ -107,7 +109,7 @@ $total = array_sum(array_column($data, 'amount'));
                 <tbody>
                     <?php foreach ($data as $row): ?>
                         <tr>
-                            <td><?= h($row['trip_name']) ?></td>
+                            <td class="trip-cell"><?= h($row['trip_name']) ?></td>
                             <td class="date-cell"><?= h($row['expense_date']) ?></td>
                             <td><span class="tag"><?= h($row['category']) ?></span></td>
                             <td class="amount-cell"><?= number_format($row['amount']) ?> 円</td>
@@ -118,7 +120,7 @@ $total = array_sum(array_column($data, 'amount'));
                 <tfoot>
                     <tr>
                         <td colspan="3">合計</td>
-                        <td class="amount-cell"><?= number_format($total) ?> 円</td>
+                        <td class="amount-cell total"><?= number_format($total) ?> 円</td>
                         <td></td>
                     </tr>
                 </tfoot>

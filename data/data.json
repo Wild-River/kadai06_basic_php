@@ -3,32 +3,120 @@
         "trip_name": "京都旅行",
         "expense_date": "2026-06-01",
         "category": "交通",
-        "amount": 14000,
-        "memo": "新幹線(東京→京都)",
+        "amount": 28000,
+        "memo": "新幹線（東京⇄京都 往復）",
         "created_at": "2026-06-01 09:12:00"
     },
     {
         "trip_name": "京都旅行",
         "expense_date": "2026-06-01",
         "category": "宿",
-        "amount": 98000,
-        "memo": "ゲストハウス1泊",
+        "amount": 19600,
+        "memo": "町家ゲストハウス 2泊",
         "created_at": "2026-06-01 18:30:00"
     },
     {
         "trip_name": "京都旅行",
-        "expense_date": "2026-06-10",
+        "expense_date": "2026-06-01",
         "category": "食事",
-        "amount": 5000,
-        "memo": "memo",
-        "created_at": "2026-06-24 06:16:39"
+        "amount": 3800,
+        "memo": "先斗町 おばんざい",
+        "created_at": "2026-06-01 20:10:00"
     },
     {
         "trip_name": "京都旅行",
-        "expense_date": "2026-06-13",
+        "expense_date": "2026-06-02",
+        "category": "観光",
+        "amount": 600,
+        "memo": "清水寺 拝観料",
+        "created_at": "2026-06-02 10:30:00"
+    },
+    {
+        "trip_name": "京都旅行",
+        "expense_date": "2026-06-02",
+        "category": "食事",
+        "amount": 1200,
+        "memo": "湯豆腐ランチ",
+        "created_at": "2026-06-02 12:45:00"
+    },
+    {
+        "trip_name": "京都旅行",
+        "expense_date": "2026-06-02",
+        "category": "買物",
+        "amount": 2400,
+        "memo": "八つ橋・抹茶菓子",
+        "created_at": "2026-06-02 15:20:00"
+    },
+    {
+        "trip_name": "京都旅行",
+        "expense_date": "2026-06-03",
+        "category": "観光",
+        "amount": 1200,
+        "memo": "嵐山トロッコ列車",
+        "created_at": "2026-06-03 11:00:00"
+    },
+    {
+        "trip_name": "沖縄旅行",
+        "expense_date": "2026-05-10",
+        "category": "交通",
+        "amount": 42000,
+        "memo": "航空券（往復・2名）",
+        "created_at": "2026-05-10 07:00:00"
+    },
+    {
+        "trip_name": "沖縄旅行",
+        "expense_date": "2026-05-10",
         "category": "宿",
-        "amount": 9800,
-        "memo": "memo",
-        "created_at": "2026-06-24 07:34:25"
+        "amount": 48000,
+        "memo": "ビーチリゾート 3泊",
+        "created_at": "2026-05-10 15:00:00"
+    },
+    {
+        "trip_name": "沖縄旅行",
+        "expense_date": "2026-05-10",
+        "category": "交通",
+        "amount": 18000,
+        "memo": "レンタカー 3日間",
+        "created_at": "2026-05-10 15:30:00"
+    },
+    {
+        "trip_name": "沖縄旅行",
+        "expense_date": "2026-05-11",
+        "category": "観光",
+        "amount": 4400,
+        "memo": "美ら海水族館（2名）",
+        "created_at": "2026-05-11 10:00:00"
+    },
+    {
+        "trip_name": "沖縄旅行",
+        "expense_date": "2026-05-11",
+        "category": "食事",
+        "amount": 5200,
+        "memo": "海ぶどう・沖縄そば",
+        "created_at": "2026-05-11 13:00:00"
+    },
+    {
+        "trip_name": "沖縄旅行",
+        "expense_date": "2026-05-12",
+        "category": "観光",
+        "amount": 8000,
+        "memo": "シュノーケリングツアー",
+        "created_at": "2026-05-12 09:30:00"
+    },
+    {
+        "trip_name": "沖縄旅行",
+        "expense_date": "2026-05-12",
+        "category": "買物",
+        "amount": 3500,
+        "memo": "お土産（ちんすこう・泡盛）",
+        "created_at": "2026-05-12 17:00:00"
+    },
+    {
+        "trip_name": "沖縄旅行",
+        "expense_date": "2026-05-13",
+        "category": "食事",
+        "amount": 2800,
+        "memo": "空港でソーキそば",
+        "created_at": "2026-05-13 11:30:00"
     }
 ]

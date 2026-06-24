@@ -31,7 +31,6 @@ $tripNames = array_unique(array_column($data, 'trip_name'));
         <header class="page-head">
             <p class="eyebrow">New Record</p>
             <h1>旅費の登録</h1>
-            <p class="sub">旅の支出をひとつ書き留める。</p>
         </header>
 
         <!-- 登録フォーム -->

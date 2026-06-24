@@ -21,10 +21,25 @@ body {
 .container {
   max-width: 1040px;
   margin: 0 auto;
-  padding: 80px 32px 120px;
+  padding: 30px 32px 120px;
 }
-.page-head {
-  margin-bottom: 72px;
+
+.head-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 34px;
+}
+
+.head-row .page-head {
+  margin-bottom: 0;
+}
+
+.total-row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
 }
 .page-head .eyebrow {
   font-family: 'Cormorant Garamond', serif;
@@ -42,33 +57,36 @@ body {
   margin: 0 0 12px;
   letter-spacing: 0.01em;
 }
-.page-head .sub {
-  font-size: 15px;
-  color: var(--muted);
-  margin: 0;
-}
 /* ヘッダー内のボタン（aタグをボタン化） */
 .header-btn {
   display: inline-block;
-  margin-top: 24px;
-  text-decoration: none; /* リンクの下線を消す */
+  text-decoration: none;
 }
-.total-hero {
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
-  padding: 32px 0 40px;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 64px;
+@media (max-width: 760px) {
+  .head-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .head-row .total-row {
+    margin-bottom: 0;
+  }
+  .total-row {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    width: 100%;
+  }
+  .head-row .header-btn {
+    align-self: flex-start; /* 全幅にせず、中身のサイズに収める */
+  }
 }
-.total-hero .label {
+.total-row .label {
   font-family: 'Cormorant Garamond', serif;
   font-size: 18px;
   letter-spacing: 0.1em;
   color: var(--muted);
 }
-.total-hero .value {
+.total-row .value {
   font-family: din-2014, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -76,7 +94,7 @@ body {
   color: var(--ink);
   letter-spacing: 0.01em;
 }
-.total-hero .value .yen {
+.total-row .value .yen {
   font-size: 22px;
   color: var(--accent);
   margin-left: 4px;
@@ -100,20 +118,35 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 .card {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 28px 24px;
+  overflow: hidden;
+}
+#categoryChart,
+#tripChart {
+  max-width: 100%;
 }
 @media (max-width: 760px) {
   .charts {
     grid-template-columns: 1fr;
   }
   .page-head h1 {
-    font-size: 42px;
+    font-size: 28px;
+  }
+  .container {
+    padding: 56px 20px 80px;
+  }
+  .card {
+    padding: 24px 16px;
+  }
+  #categoryChart,
+  #tripChart {
+    max-width: 100%;
   }
 }
 .table-wrap {
@@ -121,8 +154,13 @@ body {
 }
 table {
   width: 100%;
+  min-width: 580px;
   border-collapse: collapse;
   font-size: 14px;
+}
+tbody td,
+thead th {
+  white-space: nowrap;
 }
 thead th {
   text-align: left;
@@ -142,18 +180,27 @@ tbody td {
 tbody tr:hover {
   background: var(--surface);
 }
+.trip-cell {
+  min-width: 100px;
+}
 .date-cell {
+  min-width: 110px;
   font-family: din-2014, sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 16px;
 }
 .amount-cell {
   font-family: din-2014, sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 16px;
   text-align: right;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
+}
+.amount-cell.total {
+  font-size: 18px;
 }
 .tag {
   display: inline-block;
@@ -165,6 +212,8 @@ tbody tr:hover {
   white-space: nowrap;
 }
 .memo-cell {
+  min-width: 180px;
+  white-space: normal;
   color: var(--muted);
 }
 tfoot td {
@@ -298,7 +347,6 @@ tfoot .amount-cell {
   border-color: var(--accent);
 }
 .radio input {
-  accent-color: var(--accent);
   margin: 0;
 }
 /* チェック中のチップを強調 */
