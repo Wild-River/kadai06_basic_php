@@ -84,6 +84,7 @@ $tripNames = array_unique(array_column($data, 'trip_name'));
 
             <div class="form-actions">
                 <button type="submit" class="btn-primary">登録する</button>
+                <!-- クリック → read.php へGETでアクセス -->
                 <a href="./read.php" class="btn-link">一覧を見る →</a>
             </div>
         </form>

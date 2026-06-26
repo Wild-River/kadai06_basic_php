@@ -1,6 +1,6 @@
 <?php
 $file = './data/data.json';
-$data = json_decode(file_get_contents($file), true) ?? [];
+$data = json_decode(file_get_contents($file), true) ?? []; // 読み込み
 
 include('./func.php');
 
@@ -14,9 +14,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'memo'         => $_POST['memo'],
         'created_at'   => date('Y-m-d H:i:s'),
     ];
-    file_put_contents($file, json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+    file_put_contents($file, json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT)); // 書き込み
+    // 「日本語そのまま」かつ「インデント付きで整形して」出力する
+    //  | は ビットOR演算子で、「両方のオプションをまとめて有効にする」という書き方
 
-    header('Location: ' . $_SERVER['PHP_SELF']);
+    header('Location: ' . $_SERVER['PHP_SELF']); //保存 → 自分のページへリダイレクト（ここでもGETで開く）
+    //PRGパターン（Post / Redirect / Get） POSTで何か保存する処理を書くときのお約束の締めくくり
     exit;
 }
 

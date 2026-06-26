@@ -5,8 +5,8 @@ const palette = ['#14a7cc', '#3fbdda', '#7ad3e6', '#0f8aa9', '#a8e2ee', '#5cc4dd
 // Object.keys / Object.values で連想配列をラベルと値の配列に分ける
 new ApexCharts(document.querySelector('#categoryChart'), {
     chart: { type: 'donut', height: 300, fontFamily: '"din-2014", sans-serif' },
-    series: Object.values(byCategory),
-    labels: Object.keys(byCategory),
+    series: Object.values(byCategory), //JSがラベルを受け取る
+    labels: Object.keys(byCategory), //JSが値を受け取る
     colors: palette,
     legend: { position: 'bottom', fontSize: '13px' },
     dataLabels: {
@@ -32,8 +32,8 @@ new ApexCharts(document.querySelector('#categoryChart'), {
 // ── ② 旅行別の棒グラフ ──
 new ApexCharts(document.querySelector('#tripChart'), {
     chart: { type: 'bar', height: 300, fontFamily: '"din-2014", sans-serif', toolbar: { show: false } },
-    series: [{ name: '合計', data: Object.values(byTrip) }],
-    xaxis: { categories: Object.keys(byTrip) },
+    series: [{ name: '合計', data: Object.values(byTrip) }], //JSがラベルを受け取る
+    xaxis: { categories: Object.keys(byTrip) }, //JSが値を受け取る
     colors: ['#14a7cc'],
     plotOptions: {
         bar: { borderRadius: 6, columnWidth: '45%', distributed: false }
